@@ -7,3 +7,8 @@
 
 import Foundation
 import RealmSwift
+
+class Task: Object {
+    @objc dynamic var title = ""
+    @objc dynamic var content = ""
+}
