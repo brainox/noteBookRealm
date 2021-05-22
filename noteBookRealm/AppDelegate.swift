@@ -30,15 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        print("\(NSHomeDirectory())")
         let allMyTasks = realm.objects(Task.self)
         
-        if let firstTask = allMyTasks.first {
-            try! realm.write {
-                firstTask.title = "Change the first title"
-            }
-        }
-        
-        for task in allMyTasks {
-            print("Task title: \(task.title)" + "\n" + "Task Content \(task.content)" + "\n =============")
-        }
+        let filteredTask = allMyTasks.filter("title CONTAINS 'Third '")
+        print(filteredTask)
         return true
     }
 
