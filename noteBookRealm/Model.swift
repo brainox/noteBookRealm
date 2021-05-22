@@ -12,3 +12,10 @@ class Task: Object {
     @objc dynamic var title = ""
     @objc dynamic var content = ""
 }
+
+class Taskbook: Object {
+    @objc dynamic var title = ""
+    @objc dynamic var creationDate = Date()
+    
+    let tasks =  List<Task>()
+}

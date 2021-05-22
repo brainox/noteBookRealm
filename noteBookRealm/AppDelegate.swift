@@ -14,28 +14,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        return true
+    }
+    
+    func createTaskbook(_ title: String) {
         let realm = try! Realm()
         
-//        let myFirstTask = Task()
-//        myFirstTask.title = "My Third Task"
-//        myFirstTask.content = "Hello My People"
-//
-//        do {
-//            try realm.write {
-//                realm.add(myFirstTask)
-//            }
-//        } catch {
-//            print(error.localizedDescription)
-//        }
-//        print("\(NSHomeDirectory())")
-        let allMyTasks = realm.objects(Task.self)
         
-        let filteredTask = allMyTasks.filter("title CONTAINS 'Third '")
+    }
+    
+    func addTasks (_ taskbook: Taskbook) {
         
-        let moreComplexFilter = NSPredicate(format: "title CONTAINS %@ AND content CONTAINS %@", "My", "Changing")
-        let results = allMyTasks.filter(moreComplexFilter)
-        print(results)
-        return true
     }
 
     // MARK: UISceneSession Lifecycle
