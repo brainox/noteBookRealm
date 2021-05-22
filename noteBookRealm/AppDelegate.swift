@@ -16,18 +16,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let realm = try! Realm()
         
-        let myFirstTask = Task()
-        myFirstTask.title = "My Third Task"
-        myFirstTask.content = "Hello My People"
-        
-        do {
-            try realm.write {
-                realm.add(myFirstTask)
-            }
-        } catch {
-            print(error.localizedDescription)
-        }
-        print("\(NSHomeDirectory())")
+//        let myFirstTask = Task()
+//        myFirstTask.title = "My Third Task"
+//        myFirstTask.content = "Hello My People"
+//
+//        do {
+//            try realm.write {
+//                realm.add(myFirstTask)
+//            }
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+//        print("\(NSHomeDirectory())")
+        print(realm.objects(Task.self))
         return true
     }
 
