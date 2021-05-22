@@ -20,6 +20,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         myFirstTask.title = "My First Task"
         myFirstTask.content = "This is my first task, it is really cool!"
         
+        do {
+            try realm.write {
+                realm.add(myFirstTask)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        
         return true
     }
 
