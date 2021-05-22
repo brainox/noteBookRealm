@@ -31,7 +31,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let allMyTasks = realm.objects(Task.self)
         
         let filteredTask = allMyTasks.filter("title CONTAINS 'Third '")
-        print(filteredTask)
+        
+        let moreComplexFilter = NSPredicate(format: "title CONTAINS %@ AND content CONTAINS %@", "My", "Changing")
+        let results = allMyTasks.filter(moreComplexFilter)
+        print(results)
         return true
     }
 
