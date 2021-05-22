@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let realm = try! Realm()
         
         let myFirstTask = Task()
+        myFirstTask.title = "My First Task"
+        myFirstTask.content = "This is my first task, it is really cool!"
         
         return true
     }
