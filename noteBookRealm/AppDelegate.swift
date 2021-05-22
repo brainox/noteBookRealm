@@ -17,8 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let realm = try! Realm()
         
         let myFirstTask = Task()
-        myFirstTask.title = "My First Task"
-        myFirstTask.content = "This is my first task, it is really cool!"
+        myFirstTask.title = "My Third Task"
+        myFirstTask.content = "Hello My People"
         
         do {
             try realm.write {
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } catch {
             print(error.localizedDescription)
         }
-        
+        print("\(NSHomeDirectory())")
         return true
     }
 
