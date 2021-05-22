@@ -28,7 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            print(error.localizedDescription)
 //        }
 //        print("\(NSHomeDirectory())")
-        print(realm.objects(Task.self))
+        let allMyTasks = realm.objects(Task.self)
+        if let firstTask = allMyTasks.first {
+            try! realm.write {
+                firstTask.title = "Change the first title"
+            }
+        }
         return true
     }
 
